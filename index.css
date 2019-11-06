@@ -1,0 +1,332 @@
+﻿/*
+    AUTHOR: GRADI KAYAMBA
+    ADVANCED CSS3 USING FLEXBOX
+
+*/
+@charset "UTF-8";
+/*header{background-color:#c94c4c;}
+nav{background: linear-gradient(to top right, #000000 -41%, #003366 144%);}
+aside{background-color:#92a8d1;}
+main{background-color:#b1cbbb;}
+footer{background-color:#eea29a;}
+    background: linear-gradient(to bottom right, #9966ff -38%, #3399ff 128%);blue
+*/
+* {box-sizing:border-box; color:white;}
+a {text-decoration:none;}
+img{border:0;max-width:100%;border-radius:5px;}
+header, nav, footer, main{display:flex;}
+header{background: linear-gradient(to top left, #cc3300 -38%, #660033 128%);}
+button {
+    background: linear-gradient(to top left, #cc3300 -38%, #660033 128%);
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    color: black;
+    font-weight: bold;
+    border: 2px solid #ff00008c;
+}
+/* ---------creating and defining our variables------- */
+:root {
+    --main-border: 1px solid #ffffff38;
+    --main-radius:5px;
+}
+
+/* ----------------laptop settings---------------------- */
+@media screen and  (min-width:802px){
+    body{margin:0;background-color:black;}
+    header #center{width:70%;}
+    header span#container + span {
+        background-color: #00000070;
+        width: 100%;
+        height: 95%;
+        border-radius: 5px;
+        
+    }
+    header span.title {
+        top: 40%;
+        font-size: 3vw;
+        font-weight: bold;
+        text-align:center;
+    }
+    header span.title:after{
+        content:"Learning CSS3 - FLEXBOX (by) GRADI KAYAMBA";
+            color:white;
+    }
+    /*nav{border-bottom:var(--main-border);}*/
+    nav a{
+        padding:10px;
+        margin:5px;
+        border-radius:var(--main-radius);
+        /*border:var(--main-border);*/
+    }
+    nav > section{padding:0; margin:auto; }
+    nav section#first p::after{
+        content:"Life Time Learning";
+        
+    }
+    aside#left{float:left;width:20%;height:700px;overflow-y: scroll;}
+    aside#left section, aside#right section{margin:10px;border-radius:var(--main-radius);}
+    main {
+        float: left;
+        width: 60%;
+        flex-flow: wrap;
+    }
+       main > section{
+            padding: 10px;
+            margin: 10px;
+            border: var(--main-border);
+            border-radius:var(--main-radius);
+        }
+    aside#right{float:right;width:20%;}
+    footer{flex-wrap:wrap;}
+   
+    footer > section{width:24%;}
+    footer section#last + section{width:100%;}
+    @keyframes sunrise{
+    0%{left:75%;box-shadow: 0px 0px 14px -1px #ffff007d;}
+    100%{left:60%;box-shadow: 0px 0px 69px 7px #ffff007d;}
+}
+    #sun {
+        top: 35%;
+        left: 60%;
+    }
+    
+    
+}
+/* --------tablet settings----------------- */
+@media screen and (max-width:801px){
+    body{margin:15px; text-align:center;background-color:black;}
+    header #center{min-width:60%;}
+    header span#container + span {
+        background-color: #00000070;
+        width: 100%;
+        height: 95%;
+        left:0;
+        border-radius: 5px;
+    }
+        header span.title {
+        top: 40%;
+        font-size: 4vw;
+        left:0;
+        font-weight: bold;
+        text-align:center;
+    }
+    header span.title:after{
+        content:"Learning CSS3 - FLEXBOX (by) GRADI KAYAMBA";
+            color:white;
+    }
+    nav{border:var(--main-border);}
+    nav > section a{
+        border:var(--main-border);
+        border-radius:var(--main-radius);
+        padding:10px; margin:auto;
+        display:inline-block;
+    }
+    nav > section{padding:10px; margin:auto; }
+    nav section#first p::after{
+        content:"Tablet - view menu";
+        
+    }
+    aside#left{float:left;width:30%;}
+    aside#left section{margin:10px;}
+    main{float:left;width:70%;flex-flow:wrap;border-left:var(--main-border);padding:10px;}
+    main > section{
+        padding: 10px;
+        margin: 10px auto;
+        border: var(--main-border);
+
+    }
+    aside#right{display:block;float:none;clear:both;}
+    footer{display:block;}
+    footer ul{text-align:left;list-style-type:none;}
+     @keyframes sunrise{
+        0%{left:75%;box-shadow: 0px 0px 14px -1px #ffff007d;}
+        100%{left:60%;box-shadow: 0px 0px 69px 7px #ffff007d;}
+    }
+    #sun {
+        top: 35%;
+        left: 60%;
+    }
+
+}
+/* ----------------phone settings------------------------- */
+@media screen and (max-width:426px){
+    header, aside#right, footer{display:block;}
+        header span#container + span {
+        background-color: #00000070;
+        width: 100%;
+        height: 428px;
+        display: block;
+        top: -39px;
+        left: 0;
+        border-radius: 5px;
+    }
+    header span.title {
+        bottom: -192px;
+        font-size: 6vw;
+        left: 0;
+        padding:10px; 
+        top:auto;
+        font-weight: bold;
+    }
+    aside#left, main{width:100%;float:none;display:block;}
+    nav{
+       
+        height:80px;
+        flex-wrap:wrap;
+       
+    }
+    nav:nth-child(2) a{
+        padding:15px;
+        margin:15px auto;
+        width:100%;
+
+        margin-bottom:5px;
+        /*outline:1px solid black;*/
+        /*font-size:3.2vw;*/                  
+    }
+    nav:nth-child(2) a:first-child{margin-top:0;}
+    nav section#last{display:none;}
+    nav > section{padding:10px; margin:10px auto; }
+    nav section#first p::after{
+        content:"Phone - scroll to menu";
+        
+    }
+    nav section#first{margin-top:5px;border-bottom:var(--main-border);}
+    nav p{padding:0;}
+    main{border-left:0;padding:0;}
+    main > section {
+        padding: 10px;
+        margin: 10px auto;
+        border: var(--main-border);
+        background-image: linear-gradient(507deg, #001b3594, #10150073);
+    }
+    main > section, aside > section{box-shadow: 0px 0px 6px 2px #ffffff1a, 0px 0px 19px -33px #5a5a5a;border-radius:5px;}
+    aside#left{border-bottom:var(--main-border);}
+    aside#left > section {margin:0 0 10px 0;}
+    footer > section {padding:10px;}
+    @keyframes sunrise{
+        0%{left:30%;box-shadow: 0px 0px 14px -1px #ffff007d;}
+        100%{left:45%;box-shadow: 0px 0px 69px 7px #ffff007d;}
+    }
+    #sun {
+        top: 34px;
+        left: 30%;
+    }
+    #earth, #container{display:none;}
+}
+/* ----------------------global values-------------------- */
+footer > section, aside > section{
+    padding:10px; margin:10px auto; border: var(--main-border);
+}
+
+header{
+     height:400px;         
+}
+header > section{padding:10px;margin:10px auto;}
+header > section a{
+    text-decoration:none;
+    
+}
+header #center{
+    position:relative;
+}
+header #center > span{
+    position:absolute;
+    color:transparent;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    overflow: auto;
+    z-index: 1;
+    background: linear-gradient(385deg, #000000 -41%, #003366 144%);
+    box-shadow: 0px 15px 13px 2px #000000, 1px 31px 41px -7px #000000;
+}
+nav a{text-transform:uppercase;}
+/* this is even */
+aside > section, main > section:nth-child(even){background-image: linear-gradient(507deg, #001b3594, #10150073);}
+/* this is odd*/
+aside > section, main > section:nth-child(odd){
+    background-image: linear-gradient(507deg, #170101, #0000001f);}
+a {
+    background-color:transparent;
+    transition: background-color 1s;
+    -webkit-transition: background-color 1s;
+}
+a:hover{background-color:#003366;}
+
+footer{clear:both;border-top:var(--main-border); background: linear-gradient(385deg, #000000 -41%, #003366 144%);padding:10px;}
+footer > section{border-radius:var(--main-radius);}
+footer:last-child p{text-align:center;}
+
+#sun {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(to top right, #800000 -38%, #ff0000 128%);
+/* position and @keyframe set in the laptop, phone, and tablet section*/
+    border:3px solid #dd0000;
+    border-radius: 50%;
+    box-shadow: 0px 0px 14px -1px #ffff007d;
+    animation-name:sunrise;
+    animation-duration: 5s;
+    animation-iteration-count:infinite;
+    animation-direction: alternate;
+}
+@keyframes moon{
+   0%{background-color: gray;left:80%;box-shadow: 0px 0px 14px -1px #ffff007d;}
+    100%{background-color:transparent;left:40%;box-shadow: 0px 0px 69px 7px #ffff007d;}
+}
+#moon{
+    display:none;
+    width:50px;
+    height:50px;
+    background-color:gray;
+    top:60%;
+    left:80%;
+    box-shadow: 0px 0px 14px -1px #ffff007d;
+    border:1px solid orange;
+    border-radius:50%;
+    transform:rotate( 0deg);
+    animation-name:moon;
+    animation-duration:10s;
+    animation-iteration-count:infinite;
+    animation-direction: alternate;
+}
+@keyframes container-earth{
+    from{transform:rotate( 0deg);}
+    to{transform:rotate(360deg);}
+}
+@keyframes earth{
+    from{transform:rotate( 360deg);box-shadow: 0px 0px 0px 0px #ffff007d;}
+    to{transform:rotate(0deg); box-shadow: 0px 0px 69px 7px #ffff007d;}
+}
+#container{
+    width: 236px;
+    height: 15px;
+    background-color: #87cefa00;
+    top: 46%;
+    left: 61%;
+    border-radius: 5%;
+    animation-name: container-earth;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-direction:normal;
+}
+#earth {
+    width: 60px;
+    height: 60px;
+    display: block;
+    color: transparent;
+    padding: 30px;
+    border: 3px solid #002352;
+    box-shadow: 0px 0px 0px 0px #ffff007d;
+    background: linear-gradient(385deg, #000000 -41%, #003366e5 144%);
+    border-radius: 50%;
+    animation-name: earth;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
