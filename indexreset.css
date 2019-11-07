@@ -1,0 +1,194 @@
+﻿/*
+    AUTHOR: GRADI KAYAMBA
+    ADVANCED CSS3 USING FLEXBOX
+    tamplet
+
+*/
+/*
+    FORMAT TO FOLLOW
+    <header>
+        <section>include 3 sections in each tags</section>
+        <section></section>
+        <section></section>
+    </header>
+    <nav></nav>
+    <aside id="left"></aside>
+    <main></main>
+    <aside id="right"></aside>
+    <footer></footer>
+*/
+@charset "UTF-8";
+/*header{background-color:#c94c4c;}
+nav{background: linear-gradient(to top right, #000000 -41%, #003366 144%);}
+aside{background-color:#92a8d1;}
+main{background-color:#b1cbbb;}
+footer{background-color:#eea29a;}
+    background: linear-gradient(to bottom right, #9966ff -38%, #3399ff 128%);blue
+*/
+* {box-sizing:border-box; color:white;}
+a {text-decoration:none;}
+img{border:0;max-width:100%;border-radius:5px;}
+header, nav, footer, main{display:flex;}
+header{background: linear-gradient(to top left, #cc3300 -38%, #660033 128%);}
+button {
+    background: linear-gradient(to top left, #cc3300 -38%, #660033 128%);
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    color: black;
+    font-weight: bold;
+    border: 2px solid #ff00008c;
+}
+/* ---------creating and defining our variables------- */
+:root {
+    --main-border: 1px solid #ffffff38;
+    --main-radius:5px;
+}
+
+/* ----------------laptop settings---------------------- */
+@media screen and  (min-width:802px){
+    body{margin:0;background-color:black;}
+    header #center{width:70%;}
+    /*nav{border-bottom:var(--main-border);}*/
+    nav a{
+        padding:10px;
+        margin:5px;
+        border-radius:var(--main-radius);
+        /*border:var(--main-border);*/
+    }
+    nav > section{padding:0; margin:auto; }
+    nav section#first p::after{
+        content:"Life Time Learning";
+        
+    }
+    aside#left{float:left;width:20%;height:700px;overflow-y: scroll;}
+    aside#left section, aside#right section{margin:10px;border-radius:var(--main-radius);}
+    main {
+        float: left;
+        width: 60%;
+        flex-flow: wrap;
+    }
+       main > section{
+            padding: 10px;
+            margin: 10px;
+            border: var(--main-border);
+            border-radius:var(--main-radius);
+        }
+    aside#right{float:right;width:20%;}
+    footer{flex-wrap:wrap;}
+   
+    footer > section{width:24%;}
+    footer section#last + section{width:100%;}
+    
+    
+}
+/* --------tablet settings----------------- */
+@media screen and (max-width:801px){
+    body{margin:15px; text-align:center;background-color:black;}
+    header #center{min-width:60%;}
+    nav{border:var(--main-border);}
+    nav > section a{
+        border:var(--main-border);
+        border-radius:var(--main-radius);
+        padding:10px; margin:auto;
+        display:inline-block;
+    }
+    nav > section{padding:10px; margin:auto; }
+    nav section#first p::after{
+        content:"Tablet - view menu";
+        
+    }
+    aside#left{float:left;width:30%;}
+    aside#left section{margin:10px;}
+    main{float:left;width:70%;flex-flow:wrap;border-left:var(--main-border);padding:10px;}
+    main > section{
+        padding: 10px;
+        margin: 10px auto;
+        border: var(--main-border);
+
+    }
+    aside#right{display:block;float:none;clear:both;}
+    footer{display:block;}
+    footer ul{text-align:left;list-style-type:none;}
+
+}
+/* ----------------phone settings------------------------- */
+@media screen and (max-width:426px){
+    header, aside#right, footer{display:block;}
+    aside#left, main{width:100%;float:none;display:block;}
+    nav{
+       
+        height:50px;
+        flex-wrap:wrap;
+       
+    }
+    nav:nth-child(2) a{
+        padding:10px;
+        margin:auto;
+        max-width:50%;
+        border:var(--main-border);
+        margin-bottom:5px;
+        /*outline:1px solid black;*/
+        /*font-size:3.2vw;*/                  
+    }
+    nav > section{padding:10px; margin:10px auto; }
+    nav section#first p::after{
+        content:"Phone - scroll to menu";
+        
+    }
+    nav section#first{margin-top:5px;}
+    nav a{background: linear-gradient(24deg, #003366 -52%, #000000 164%);}
+    nav p{margin:0;padding:0;}
+    main{border-left:0;padding:0;}
+    main > section {
+        padding: 10px;
+        margin: 10px auto;
+        border: var(--main-border);
+        background-image: linear-gradient(507deg, #001b3594, #10150073);
+    }
+    main > section, aside > section{box-shadow: 0px 0px 6px 2px #ffffff1a, 0px 0px 19px -33px #5a5a5a;border-radius:5px;}
+    aside#left{border-bottom:var(--main-border);}
+    aside#left > section {margin:0 0 10px 0;}
+    footer > section {padding:10px;}
+
+}
+/* ----------------------global values-------------------- */
+header > section, footer > section, aside > section{
+    padding:10px; margin:10px auto; border: var(--main-border);
+}
+
+header{
+     height:400px;         
+}
+header > section a{
+    text-decoration:none;
+    
+}
+header #center{
+    position:relative;
+}
+header #center > span{
+    position:absolute;
+}
+header #center:nth-child(2n+1){background-color:black;width:10%;}
+header #center:nth-child(2n-1){background-color:yellow;width:30%;}
+nav {
+    position: sticky;
+    top: 0;
+    overflow: auto;
+    z-index: 1;
+    background: linear-gradient(385deg, #000000 -41%, #003366 144%);
+    box-shadow: 0px 15px 13px 2px #000000, 1px 31px 41px -7px #000000;
+}
+nav a{text-transform:uppercase;}
+/* this is even */
+aside > section, main > section:nth-child(2n+1){background-image: linear-gradient(507deg, #001b3594, #10150073);}
+/* this is odd*/
+aside > section, main > section:nth-child(2n-1){background-image: linear-gradient(507deg, #170101, #0000001f);}
+
+a:hover{background: linear-gradient(24deg, #003366 121%, #000000 164%);}
+
+footer{clear:both;border-top:var(--main-border); background: linear-gradient(385deg, #000000 -41%, #003366 144%);padding:10px;}
+footer > section{border-radius:var(--main-radius);}
+footer:last-child p{text-align:center;}
+
