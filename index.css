@@ -189,7 +189,8 @@ footer:last-child p{text-align:center;}
 /* ----------------phone settings------------------------- */
 @media screen and (max-width:426px){
     header, aside#right, footer{display:block;}
-        header span#container + span {
+    header section#first{margin-top:0;}
+    header span#container + span {
         background-color: #00000070;
         width: 100%;
         height: 428px;
@@ -206,7 +207,7 @@ footer:last-child p{text-align:center;}
         top:auto;
         font-weight: bold;
     }
-    aside#left, main{width:100%;float:none;display:block;}
+    aside#left, main{width:auto;float:none;display:block;}
     nav{
        
         height:80px;
