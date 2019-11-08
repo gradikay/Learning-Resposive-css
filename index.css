@@ -15,7 +15,7 @@ footer{background-color:#eea29a;}
 a {text-decoration:none;}
 img{border:0;max-width:100%;border-radius:5px;}
 header, nav, footer, main{display:flex;}
-header{background: linear-gradient(to top left, #cc3300 -38%, #660033 128%);}
+header{background: linear-gradient(to top left, #cc3300 -38%, #660033 128%);height:400px;}
 button {
     background: linear-gradient(to top left, #cc3300 -38%, #660033 128%);
     padding: 10px;
@@ -25,10 +25,47 @@ button {
     font-weight: bold;
     border: 2px solid #ff00008c;
 }
+/* ----------------------global values-------------------- */
+footer > section, aside > section{
+    padding:10px; margin:10px auto; border: var(--main-border);
+}
+
+header > section{padding:10px;margin:10px auto;}
+header > section a{ text-decoration:none;}
+header #center{ position:relative; }
+header #center > span{
+    position:absolute;
+    color:transparent;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    overflow: auto;
+    z-index: 1;
+    background: linear-gradient(385deg, #000000 -41%, #003366 144%);
+    box-shadow: 0px 15px 13px 2px #000000, 1px 31px 41px -7px #000000;
+}
+nav a{text-transform:uppercase;}
+/* this is even */
+aside > section, main > section:nth-child(even){background-image: linear-gradient(507deg, #001b3594, #10150073);}
+/* this is odd*/
+aside > section, main > section:nth-child(odd){
+    background-image: linear-gradient(507deg, #170101, #0000001f);}
+a {
+    background-color:transparent;
+    transition: background-color 1s;
+    -webkit-transition: background-color 1s;
+}
+a:hover{background-color:#003366;}
+
+footer{clear:both;border-top:var(--main-border); background: linear-gradient(385deg, #000000 -41%, #003366 144%);padding:10px;}
+footer > section{border-radius:var(--main-radius);}
+footer:last-child p{text-align:center;}
 /* ---------creating and defining our variables------- */
 :root {
     --main-border: 1px solid #ffffff38;
-    --main-radius:5px;
+    --main-radius: 5px;
 }
 
 /* ----------------laptop settings---------------------- */
@@ -36,7 +73,7 @@ button {
     body{margin:0;background-color:black;}
     header #center{width:70%;}
     header span#container + span {
-        background-color: #00000000;
+        background-color: #00000070;
         width: 100%;
         height: 95%;
         border-radius: 5px;
@@ -95,10 +132,10 @@ button {
 }
 /* --------tablet settings----------------- */
 @media screen and (max-width:801px){
-    body{margin:15px; text-align:center;background-color:black;}
+    body{margin:0; text-align:center;background-color:black;}
     header #center{min-width:60%;}
     header span#container + span {
-        background-color: #00000000;
+        background-color: #00000070;
         width: 100%;
         height: 95%;
         left:0;
@@ -153,7 +190,7 @@ button {
 @media screen and (max-width:426px){
     header, aside#right, footer{display:block;}
         header span#container + span {
-        background-color: #00000000;
+        background-color: #00000070;
         width: 100%;
         height: 428px;
         display: block;
@@ -173,17 +210,13 @@ button {
     nav{
        
         height:80px;
-        flex-wrap:wrap;
-       
+        flex-wrap:wrap;       
     }
     nav:nth-child(2) a{
         padding:15px;
         margin:15px auto;
         width:100%;
-
-        margin-bottom:5px;
-        /*outline:1px solid black;*/
-        /*font-size:3.2vw;*/                  
+        margin-bottom:5px;                  
     }
     nav:nth-child(2) a:first-child{margin-top:0;}
     nav section#last{display:none;}
@@ -203,6 +236,7 @@ button {
     }
     main > section, aside > section{box-shadow: 0px 0px 6px 2px #ffffff1a, 0px 0px 19px -33px #5a5a5a;border-radius:5px;}
     aside#left{border-bottom:var(--main-border);}
+    aside#left, aside#right, main {margin:15px;}
     aside#left > section {margin:0 0 10px 0;}
     footer > section {padding:10px;}
     @keyframes sunrise{
@@ -215,52 +249,7 @@ button {
     }
     #earth, #container{display:none;}
 }
-/* ----------------------global values-------------------- */
-footer > section, aside > section{
-    padding:10px; margin:10px auto; border: var(--main-border);
-}
-
-header{
-     height:400px;         
-}
-header > section{padding:10px;margin:10px auto;}
-header > section a{
-    text-decoration:none;
-    
-}
-header #center{
-    position:relative;
-}
-header #center > span{
-    position:absolute;
-    color:transparent;
-}
-
-nav {
-    position: sticky;
-    top: 0;
-    overflow: auto;
-    z-index: 1;
-    background: linear-gradient(385deg, #000000 -41%, #003366 144%);
-    box-shadow: 0px 15px 13px 2px #000000, 1px 31px 41px -7px #000000;
-}
-nav a{text-transform:uppercase;}
-/* this is even */
-aside > section, main > section:nth-child(even){background-image: linear-gradient(507deg, #001b3594, #10150073);}
-/* this is odd*/
-aside > section, main > section:nth-child(odd){
-    background-image: linear-gradient(507deg, #170101, #0000001f);}
-a {
-    background-color:transparent;
-    transition: background-color 1s;
-    -webkit-transition: background-color 1s;
-}
-a:hover{background-color:#003366;}
-
-footer{clear:both;border-top:var(--main-border); background: linear-gradient(385deg, #000000 -41%, #003366 144%);padding:10px;}
-footer > section{border-radius:var(--main-radius);}
-footer:last-child p{text-align:center;}
-
+/* Animation, transformation, transition */
 #sun {
     width: 100px;
     height: 100px;

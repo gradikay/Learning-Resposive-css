@@ -29,7 +29,7 @@ footer{background-color:#eea29a;}
 a {text-decoration:none;}
 img{border:0;max-width:100%;border-radius:5px;}
 header, nav, footer, main{display:flex;}
-header{background: linear-gradient(to top left, #cc3300 -38%, #660033 128%);}
+header{background: linear-gradient(to top left, #cc3300 -38%, #660033 128%);height:400px;}
 button {
     background: linear-gradient(to top left, #cc3300 -38%, #660033 128%);
     padding: 10px;
@@ -39,6 +39,34 @@ button {
     font-weight: bold;
     border: 2px solid #ff00008c;
 }
+/* ----------------------global values-------------------- */
+header > section, footer > section, aside > section{
+    padding:10px; margin:10px auto; border: var(--main-border);
+}
+header > section a{ text-decoration:none;}
+header #center{position:relative;}
+header #center > span{position:absolute;}
+header #center:nth-child(2n+1){background-color:black;width:10%;}
+header #center:nth-child(2n-1){background-color:yellow;width:30%;}
+nav {
+    position: sticky;
+    top: 0;
+    overflow: auto;
+    z-index: 1;
+    background: linear-gradient(385deg, #000000 -41%, #003366 144%);
+    box-shadow: 0px 15px 13px 2px #000000, 1px 31px 41px -7px #000000;
+}
+nav a{text-transform:uppercase;}
+/* this is even */
+aside > section, main > section:nth-child(2n){background-image: linear-gradient(507deg, #001b3594, #10150073);}
+/* this is odd*/
+aside > section, main > section:nth-child(2n+1){background-image: linear-gradient(507deg, #170101, #0000001f);}
+
+a:hover{background: linear-gradient(24deg, #003366 121%, #000000 164%);}
+
+footer{clear:both;border-top:var(--main-border); background: linear-gradient(385deg, #000000 -41%, #003366 144%);padding:10px;}
+footer > section{border-radius:var(--main-radius);}
+footer:last-child p{text-align:center;}
 /* ---------creating and defining our variables------- */
 :root {
     --main-border: 1px solid #ffffff38;
@@ -68,12 +96,16 @@ button {
         width: 60%;
         flex-flow: wrap;
     }
-       main > section{
-            padding: 10px;
-            margin: 10px;
-            border: var(--main-border);
-            border-radius:var(--main-radius);
-        }
+    main > section{
+        padding: 10px;
+        margin: 10px;
+        border: var(--main-border);
+        border-radius:var(--main-radius);
+    }
+    /* this is even */
+    main > section:nth-child(2n) {width:40%;}
+    /* this is odd*/
+    main > section:nth-child(2n-1) {width:50%;}
     aside#right{float:right;width:20%;}
     footer{flex-wrap:wrap;}
    
@@ -84,7 +116,7 @@ button {
 }
 /* --------tablet settings----------------- */
 @media screen and (max-width:801px){
-    body{margin:15px; text-align:center;background-color:black;}
+    body{margin:0; text-align:center;background-color:black;}
     header #center{min-width:60%;}
     nav{border:var(--main-border);}
     nav > section a{
@@ -118,27 +150,26 @@ button {
     aside#left, main{width:100%;float:none;display:block;}
     nav{
        
-        height:50px;
+        height:80px;
         flex-wrap:wrap;
        
     }
     nav:nth-child(2) a{
-        padding:10px;
-        margin:auto;
-        max-width:50%;
-        border:var(--main-border);
-        margin-bottom:5px;
-        /*outline:1px solid black;*/
-        /*font-size:3.2vw;*/                  
+        padding:15px;
+        margin:15px auto;
+        width:100%;
+        margin-bottom:5px;                  
     }
+    nav:nth-child(2) a:first-child{margin-top:0;}
     nav > section{padding:10px; margin:10px auto; }
     nav section#first p::after{
         content:"Phone - scroll to menu";
         
     }
-    nav section#first{margin-top:5px;}
+    nav section#first{margin-top:5px;border-bottom:var(--main-border);}
     nav a{background: linear-gradient(24deg, #003366 -52%, #000000 164%);}
-    nav p{margin:0;padding:0;}
+    nav p{padding:0;}
+    nav section#last{display:none;}
     main{border-left:0;padding:0;}
     main > section {
         padding: 10px;
@@ -148,47 +179,11 @@ button {
     }
     main > section, aside > section{box-shadow: 0px 0px 6px 2px #ffffff1a, 0px 0px 19px -33px #5a5a5a;border-radius:5px;}
     aside#left{border-bottom:var(--main-border);}
+
+    aside#left, aside#right, main {margin:15px;}
     aside#left > section {margin:0 0 10px 0;}
     footer > section {padding:10px;}
 
 }
-/* ----------------------global values-------------------- */
-header > section, footer > section, aside > section{
-    padding:10px; margin:10px auto; border: var(--main-border);
-}
 
-header{
-     height:400px;         
-}
-header > section a{
-    text-decoration:none;
-    
-}
-header #center{
-    position:relative;
-}
-header #center > span{
-    position:absolute;
-}
-header #center:nth-child(2n+1){background-color:black;width:10%;}
-header #center:nth-child(2n-1){background-color:yellow;width:30%;}
-nav {
-    position: sticky;
-    top: 0;
-    overflow: auto;
-    z-index: 1;
-    background: linear-gradient(385deg, #000000 -41%, #003366 144%);
-    box-shadow: 0px 15px 13px 2px #000000, 1px 31px 41px -7px #000000;
-}
-nav a{text-transform:uppercase;}
-/* this is even */
-aside > section, main > section:nth-child(2n+1){background-image: linear-gradient(507deg, #001b3594, #10150073);}
-/* this is odd*/
-aside > section, main > section:nth-child(2n-1){background-image: linear-gradient(507deg, #170101, #0000001f);}
-
-a:hover{background: linear-gradient(24deg, #003366 121%, #000000 164%);}
-
-footer{clear:both;border-top:var(--main-border); background: linear-gradient(385deg, #000000 -41%, #003366 144%);padding:10px;}
-footer > section{border-radius:var(--main-radius);}
-footer:last-child p{text-align:center;}
 
