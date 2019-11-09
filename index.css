@@ -73,7 +73,7 @@ footer:last-child p{text-align:center;}
     body{margin:0;background-color:black;}
     header #center{width:70%;}
     header span#container + span {
-        background-color: #00000070;
+      
         width: 100%;
         height: 95%;
         border-radius: 5px;
@@ -135,7 +135,7 @@ footer:last-child p{text-align:center;}
     body{margin:0; text-align:center;background-color:black;}
     header #center{min-width:60%;}
     header span#container + span {
-        background-color: #00000070;
+     
         width: 100%;
         height: 95%;
         left:0;
@@ -191,7 +191,7 @@ footer:last-child p{text-align:center;}
     header, aside#right, footer{display:block;}
     header section#first{margin-top:0;}
     header span#container + span {
-        background-color: #00000070;
+ 
         width: 100%;
         height: 428px;
         display: block;
