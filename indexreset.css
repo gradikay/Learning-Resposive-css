@@ -46,8 +46,6 @@ header > section, footer > section, aside > section{
 header > section a{ text-decoration:none;}
 header #center{position:relative;}
 header #center > span{position:absolute;}
-header #center:nth-child(2n+1){background-color:black;width:10%;}
-header #center:nth-child(2n-1){background-color:yellow;width:30%;}
 nav {
     position: sticky;
     top: 0;
